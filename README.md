@@ -4,13 +4,13 @@
 ## NIM   : 312010434
 ## Kelas : TI.20.A.1
 
-# Hasil Sistem Antrian Loket
+**Hasil Sistem Antrian Loket**
 [Dokumentasi]()
 
-# Kode Program
-Git Bash Repositories
-![p](gambar/ss1.png)
+**Kode Program**
+Git Bash Repositories<br>
+![p](gambar/ss1.png)<br>
 
-Php Spark
-![p](gambar/shell.png)
+Php Spark<br>
+![p](gambar/shell.png)<br>
 [Demo program](http://tembakau-enjoyment.lovestoblog.com/)
