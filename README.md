@@ -4,8 +4,8 @@
 ## NIM   : 312010434
 ## Kelas : TI.20.A.1
 
-**Hasil Sistem Antrian Loket**
-[Dokumentasi]()
+# Hasil Sistem Antrian Loket<br>
+[Dokumentasi]()<br>
 
 **Kode Program**
 Git Bash Repositories<br>
