@@ -2,10 +2,10 @@
 -- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: Jul 08, 2022 at 01:24 PM
--- Server version: 10.4.21-MariaDB
--- PHP Version: 7.4.29
+-- Host: 127.0.0.1
+-- Waktu pembuatan: 11 Jul 2022 pada 09.22
+-- Versi server: 10.4.24-MariaDB
+-- Versi PHP: 7.4.29
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `antrian`
+-- Database: `antrianloket`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `antrian`
+-- Struktur dari tabel `antrian`
 --
 
 CREATE TABLE `antrian` (
@@ -39,7 +39,7 @@ CREATE TABLE `antrian` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=COMPACT;
 
 --
--- Dumping data for table `antrian`
+-- Dumping data untuk tabel `antrian`
 --
 
 INSERT INTO `antrian` (`id`, `tanggal`, `status`, `waktu_panggil`, `waktu_selesai`, `pelayanan_id`, `loket_id`, `antrian_last`) VALUES
@@ -76,7 +76,7 @@ INSERT INTO `antrian` (`id`, `tanggal`, `status`, `waktu_panggil`, `waktu_selesa
 (31, '22-07-06 11:31:40', 'selesai', NULL, NULL, 4, 1, NULL),
 (32, '22-07-06 11:32:59', 'selesai', NULL, NULL, 5, 1, NULL),
 (33, '22-07-06 21:54:52', 'selesai', NULL, NULL, 4, 1, NULL),
-(34, '22-07-06 21:57:11', 'berlansung', NULL, NULL, 5, 1, NULL),
+(34, '22-07-06 21:57:11', 'selesai', NULL, NULL, 5, 1, NULL),
 (35, '22-07-06 21:57:15', 'selesai', NULL, NULL, 6, 1, NULL),
 (36, '22-07-06 21:57:18', 'berlansung', NULL, NULL, 7, 1, NULL),
 (37, '22-07-06 21:57:27', 'selesai', NULL, NULL, 4, 1, NULL),
@@ -98,34 +98,102 @@ INSERT INTO `antrian` (`id`, `tanggal`, `status`, `waktu_panggil`, `waktu_selesa
 (53, '22-07-07 05:25:43', 'selesai', NULL, NULL, 4, 1, NULL),
 (54, '22-07-07 05:39:27', 'selesai', NULL, NULL, 4, 1, NULL),
 (55, '22-07-07 05:39:27', 'selesai', NULL, NULL, 4, 1, NULL),
-(56, '22-07-07 05:44:05', 'mengantri', NULL, NULL, 5, 1, NULL),
+(56, '22-07-07 05:44:05', 'berlansung', NULL, NULL, 5, 1, NULL),
 (57, '22-07-07 05:44:05', 'mengantri', NULL, NULL, 5, 1, NULL),
 (58, '22-07-07 05:46:43', 'mengantri', NULL, NULL, 5, 1, NULL),
 (59, '22-07-07 05:46:43', 'mengantri', NULL, NULL, 5, 1, NULL),
 (60, '22-07-07 08:07:04', 'selesai', NULL, NULL, 4, 1, NULL),
 (61, '22-07-07 08:07:04', 'selesai', NULL, NULL, 4, 1, NULL),
 (62, '22-07-08 01:49:22', 'selesai', NULL, NULL, 4, 1, NULL),
-(63, '22-07-08 01:49:22', 'selesai', NULL, NULL, 4, 1, NULL);
+(63, '22-07-08 01:49:22', 'selesai', NULL, NULL, 4, 1, NULL),
+(64, '22-07-08 07:33:06', 'selesai', NULL, NULL, 4, 1, NULL),
+(65, '22-07-08 07:33:06', 'selesai', NULL, NULL, 4, 1, NULL),
+(66, '22-07-08 07:49:14', 'selesai', NULL, NULL, 4, 1, NULL),
+(67, '22-07-08 07:49:14', 'selesai', NULL, NULL, 4, 1, NULL),
+(68, '22-07-11 01:56:46', 'selesai', NULL, NULL, 4, 1, NULL),
+(69, '22-07-11 01:56:46', 'selesai', NULL, NULL, 4, 1, NULL),
+(70, '22-07-11 01:58:54', 'selesai', NULL, NULL, 4, 1, NULL),
+(71, '22-07-11 01:58:54', 'selesai', NULL, NULL, 4, 1, NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `loket`
+--
+
+CREATE TABLE `loket` (
+  `id` int(11) NOT NULL,
+  `nama` varchar(100) NOT NULL,
+  `keterangan` tinytext NOT NULL,
+  `pelayanan_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `pelayanan`
+--
+
+CREATE TABLE `pelayanan` (
+  `id` int(11) NOT NULL,
+  `nama` varchar(100) NOT NULL,
+  `kode` varchar(100) NOT NULL,
+  `keterangan` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `pelayanan`
+--
+
+INSERT INTO `pelayanan` (`id`, `nama`, `kode`, `keterangan`) VALUES
+(1, 'SATU', 'A', ''),
+(2, 'DUA', 'B', ''),
+(3, 'TIGA', 'C', ''),
+(4, 'EMPAT', 'D', '');
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `antrian`
+-- Indeks untuk tabel `antrian`
 --
 ALTER TABLE `antrian`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- Indeks untuk tabel `loket`
+--
+ALTER TABLE `loket`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indeks untuk tabel `pelayanan`
+--
+ALTER TABLE `pelayanan`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT untuk tabel yang dibuang
 --
 
 --
--- AUTO_INCREMENT for table `antrian`
+-- AUTO_INCREMENT untuk tabel `antrian`
 --
 ALTER TABLE `antrian`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=64;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=72;
+
+--
+-- AUTO_INCREMENT untuk tabel `loket`
+--
+ALTER TABLE `loket`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT untuk tabel `pelayanan`
+--
+ALTER TABLE `pelayanan`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

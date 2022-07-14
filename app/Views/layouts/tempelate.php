@@ -46,11 +46,11 @@
 
   <footer class="footer mt-5 py-3 text-center">
     <div class="container">
-      <a style="text-decoration: underline;" href="https://saweria.co/fajarspace" class="text-muted">Buy me a Tembakau <i class="fa-solid fa-mug-hot"></i> </a> <br>
+      <a style="text-decoration: underline;" href="Muhammad Romdhon  " class="text-muted">Buy me a Tembakau <i class="fa-solid fa-smoking"></i> </a> <br>
       <span>
         &copy; <script>
           document.write(new Date().getFullYear());
-        </script> Mhammad Romdhon |
+        </script> Muhammad Romdhon |
         <i class="fa-solid fa-code"></i> dengan <i class="fa-solid fa-heart"></i>
       </span>
     </div>
